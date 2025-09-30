@@ -1,0 +1,16 @@
+,country,age_group,pop
+0,Albania,less_5,0.0
+1,Albania,5_to_14,0.0
+2,Albania,15_to_24,0.0
+3,Albania,25_to_64,1.0
+4,Albania,over_65,0.0
+5,Angola,less_5,6.0
+6,Angola,5_to_14,10.0
+7,Angola,15_to_24,7.0
+8,Angola,25_to_64,11.0
+9,Angola,over_65,1.0
+10,Australia,less_5,2.0
+11,Australia,5_to_14,3.0
+12,Australia,15_to_24,3.0
+13,Australia,25_to_64,13.0
+14,Australia,over_65,4.0
