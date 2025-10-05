@@ -86,6 +86,14 @@ def summurize():
     df3 = df2.groupby(['date','country','state']).size().reset_index(name='count')
 
     df3 = df3.pivot_table(index=['date','country'], columns="state", values="count").fillna(0)
+
+    missing_states =[]
+    possible_states = ['H','I','S','D','M']
+    for state in possible_states:
+        if state not in df3.columns:
+            missing_states.append(state)
+    df3[[missing_states]] = float(0)
+
     df3.reset_index().to_csv("a2-covid-summary-timeseries.csv", index=False)
 
 
@@ -102,11 +110,12 @@ def run(countries_csv_name,countries,sample_ratio,start_date,end_date):
 
 
 # SAMPLE_RATIO = 1e6
-# countries=['Afghanistan','Sweden','Japan']
+# countries=['Albania']
 # # START_DATE = '2020-04-01'
 # START_DATE = '2021-04-01'
 # END_DATE = '2022-04-30'
-# run(selected_countries=countries,
+# run(countries_csv_name='a2-countries.csv',
+#     countries=countries,
 #     sample_ratio=SAMPLE_RATIO,
-#     starting_date=START_DATE,
-#     ending_date=END_DATE)
+#     start_date=START_DATE,
+#     end_date=END_DATE)
